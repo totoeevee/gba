@@ -1,6 +1,6 @@
 document.onkeyup = function(e) 
 {
-    if(e.ctrlKey && e.shiftKey && e.which == 81) 
+    if(e.ctrlKey && e.shiftKey && e.which == 85) 
     {
         console.log("onkeyup registered");
     
