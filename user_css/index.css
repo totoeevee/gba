@@ -3,6 +3,31 @@
     transition-duration: 0.1s;
    }
 
+   
+
+   .alien-hub {
+    float: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 35vw;
+    overflow: hidden;
+    width: 40vw;
+    height: 12vw;
+   }
+
+   @media (max-width: 750px) {
+    .alien-hub {
+      float: center;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin-left: 10vw;
+      overflow: hidden;
+      width: 80vw;
+      height: 30vw;
+     }
+   }
    ::-webkit-scrollbar {
 	width: 9px;
 	border-radius: 10px;;

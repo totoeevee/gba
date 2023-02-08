@@ -71,6 +71,29 @@ html {
     float: right;
 }
 
+.alien-hub {
+    float: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 35vw;
+    overflow: hidden;
+    width: 40vw;
+    height: 12vw;
+   }
+
+   @media (max-width: 750px) {
+    .alien-hub {
+      float: center;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin-left: 10vw;
+      overflow: hidden;
+      width: 80vw;
+      height: 30vw;
+     }
+   }
 
 .setting-nav {
     display: flex;
