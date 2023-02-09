@@ -128,6 +128,37 @@ float: right;
 padding: 10px;
 }
 
+.info-nav:hover {
+    color: #000000;
+    transform: scale(1.14);
+}
+
+.setting-nav:hover {
+    color: #000000;
+    transform: scale(1.14);
+}
+
+.svg-settings:hover {
+    animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+.svg-info:hover {
+    animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+.navigation:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5vh 1vh var(--main-border-color);
+}
+
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(2px, 2px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-2px, 2px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
 .time-nav {
     display: flex;
     font-family: 'Baloo Da';
