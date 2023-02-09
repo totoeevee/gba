@@ -1,7 +1,7 @@
 myfile = open("gen\\filenames.txt", "r")
 myline = myfile.readline()
-repoHost = "gba-host"
-gameType = "gba-alt"
+repoHost = "nds-host"
+gameType = "nds-alt"
 while myline:
     print(myline)
     myline = myfile.readline()
