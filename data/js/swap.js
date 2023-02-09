@@ -72,7 +72,7 @@ if (isNet == 0) {
     }
     if (checkType == 3) {
     gameName = gameText;
-    let gameLink = "https://nds-host.nailington1.repl.co/?url=https://rawcdn.githack.com/mathadventure1/nds-host/a15becf40ff31c1f8fd57b8ca65254559311bbad/nds-alt/" + gameName + ".zip";
+    let gameLink = "https://nds-host.nailington1.repl.co/?url=https://rawcdn.githack.com/mathadventure1/nds-host/0a9e47d73741eed5a1129535d1cb027ead56b027/nds-alt/" + gameName + ".zip";
     gameName = gameLink;
     console.log("nds-server");
     isCheck = 0;
@@ -80,7 +80,7 @@ if (isNet == 0) {
     }
     if (checkType == 4) {
         gameName = gameText;
-        let gameLink = "https://rawcdn.githack.com/mathadventure1/nds-host/a15becf40ff31c1f8fd57b8ca65254559311bbad/nds-alt/" + gameName + ".zip";
+        let gameLink = "https://rawcdn.githack.com/mathadventure1/nds-host/0a9e47d73741eed5a1129535d1cb027ead56b027/nds-alt/" + gameName + ".zip";
         gameName = gameLink;
         console.log("nds-server-2");
         isCheck = 0;
