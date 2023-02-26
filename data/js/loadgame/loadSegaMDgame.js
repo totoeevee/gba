@@ -745,6 +745,8 @@ const gameNameTypeID =
 '../gba-host/segaMD-alt/seaQuest_DSV_(USA).7z',
 '/Binaries/Ecco_the_Dolphin_(USA,_Europe,_Korea)_(En).7z',
 '/Binaries/SegaCD_BIOS_v2_1_1.bin',
+'../gba-host/segaMD-alt/Golden_Axe_(World).7z',
+'../gba-host/segaMD-alt/Golden_Axe_II_(World).7z',
 
 
 
