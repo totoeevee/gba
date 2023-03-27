@@ -60,13 +60,13 @@ if (isNet == 0) {
    
     if (checkType == 1) {
     gameName = gameText;
-    let gameLink = "../gba-host/" + gameName + ".gba";
+    let gameLink = "../gba-host/gba-alt/" + gameName + ".gba";
     gameName = gameLink;
     console.log("gba-server");
     }
     if (checkType == 2) {
     gameName = gameText;
-    let gameLink = "../nes-alt/" + gameName + ".nes.zip";
+    let gameLink = "../gba-host/nes-alt/" + gameName + ".nes.zip";
     gameName = gameLink;
     console.log("nes-server");
     }
