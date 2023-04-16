@@ -1,165 +1,154 @@
+let CACHE_NAME = 'V1';
+let urlsToCache = [
+    './',
+    './emulator.html',
+    './export.html',
+    './gb.html',
+    './gba-2.html',
+    './gba.html',
+    './gbc.html',
+    './gbindex.html',
+    './index_beta.html',
+    './index.html',
+    './info.html',
+    './n64.html',
+    './nds.html',
+    './nds2.html',
+    './nes.html',
+    './nesindex.html',
+    './offline.html',
+    './reccomendations.html',
+    './romindex.html',
+    './segamd.html',
+    './settings.html',
+    './snes.html',
+    './testlaunch.html',
+    './update.html',
 
-//   // import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
-//   // precacheAndRoute([]);
+    './user_css/home.css',
+    './user_css/index.css',
+    './user_css/main.css',
+    './user_css/player.css',
+    './user_css/popup.css',
+    './user_css/rec.css',
+    './user_css/themes.css',
 
-// // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+    './user_scripts/theme.js',
+    './user_scripts/player-theme.js',
+    './user_scripts/popup.js',
 
-// const CACHE = "pwabuilder-offline-page";
+    './data/js/loadgame/loadGbagame.js',
+    './data/js/loadgame/loadGbgame.js',
+    './data/js/loadgame/loadGbcgame.js',
+    './data/js/loadgame/loadAtari52game.js',
+    './data/js/loadgame/loadN64game.js',
+    './data/js/loadgame/loadNdsgame.js',
+    './data/js/loadgame/loadNesgame.js',
+    './data/js/loadgame/loadPsxgame.js',
+    './data/js/loadgame/loadSnesgame.js',
+    './data/js/loadgame/loadSegaMSgame.js',
+    './data/js/type.js',
+    './data/js/loadtype.js',
+    './data/js/swap.js',
+    './data/loader.js',
 
-// importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+    './IodineGBA/includes/TypedArrayShim.js',
+    './IodineGBA/core/Cartridge.js',
+    './IodineGBA/core/DMA.js',
+    './IodineGBA/core/Emulator.js',
+    './IodineGBA/core/Graphics.js',
+    './IodineGBA/core/RunLoop.js',
+    './IodineGBA/core/Memory.js',
+    './IodineGBA/core/IRQ.js',
+    './IodineGBA/core/JoyPad.js',
+    './IodineGBA/core/Serial.js',
+    './IodineGBA/core/Sound.js',
+    './IodineGBA/core/Timer.js',
+    './IodineGBA/core/Wait.js',
+    './IodineGBA/core/CPU.js',
+    './IodineGBA/core/Saves.js',
+    './IodineGBA/core/sound/FIFO.js',
+    './IodineGBA/core/sound/Channel1.js',
+    './IodineGBA/core/sound/Channel2.js',
+    './IodineGBA/core/sound/Channel3.js',
+    './IodineGBA/core/sound/Channel4.js',
+    './IodineGBA/core/CPU/ARM.js',
+    './IodineGBA/core/CPU/THUMB.js',
+    './IodineGBA/core/CPU/CPSR.js',
+    './IodineGBA/core/graphics/Renderer.js',
+    './IodineGBA/core/graphics/RendererProxy.js',
+    './IodineGBA/core/graphics/BGTEXT.js',
+    './IodineGBA/core/graphics/BG2FrameBuffer.js',
+    './IodineGBA/core/graphics/BGMatrix.js',
+    './IodineGBA/core/graphics/AffineBG.js',
+    './IodineGBA/core/graphics/ColorEffects.js',
+    './IodineGBA/core/graphics/Mosaic.js',
+    './IodineGBA/core/graphics/OBJ.js',
+    './IodineGBA/core/graphics/OBJWindow.js',
+    './IodineGBA/core/graphics/Window.js',
+    './IodineGBA/core/graphics/Compositor.js',
+    './IodineGBA/core/memory/DMA0.js',
+    './IodineGBA/core/memory/DMA1.js',
+    './IodineGBA/core/memory/DMA2.js',
+    './IodineGBA/core/memory/DMA3.js',
+    './IodineGBA/core/cartridge/SaveDeterminer.js',
+    './IodineGBA/core/cartridge/SRAM.js',
+    './IodineGBA/core/cartridge/FLASH.js',
+    './IodineGBA/core/cartridge/EEPROM.js',
+    './user_scripts/XAudioJS/swfobject.js',
+    './user_scripts/XAudioJS/resampler.js',
+    './user_scripts/XAudioJS/XAudioServer.js',
+    './user_scripts/IodineGBAROMLoadGlueCode.js',
+    './user_scripts/IodineGBAJoyPadGlueCode.js',
+    './user_scripts/IodineGBASavesGlueCode.js',
+    './user_scripts/IodineGBAGraphicsGlueCode.js',
+    './user_scripts/IodineGBAAudioGlueCode.js',
+    './user_scripts/IodineGBACoreGlueCode.js',
+    './user_scripts/base64.js',
 
-// // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-// const offlineFallbackPage = "/offline.html";
+    './Binaries/gb.ico'
+    ];
 
-// self.addEventListener("message", (event) => {
-//   if (event.data && event.data.type === "SKIP_WAITING") {
-//     self.skipWaiting();
-//   }
-// });
-
-// self.addEventListener('install', async (event) => {
-//   event.waitUntil(
-//     caches.open(CACHE)
-//       .then((cache) => cache.add(offlineFallbackPage))
-//   );
-// });
-
-// if (workbox.navigationPreload.isSupported()) {
-//   workbox.navigationPreload.enable();
-// }
-
-// workbox.routing.registerRoute(
-//   new RegExp('/*'),
-//   new workbox.strategies.StaleWhileRevalidate({
-//     cacheName: CACHE
-//   })
-// );
-
-// self.addEventListener('fetch', (event) => {
-//   if (event.request.mode === 'navigate') {
-//     event.respondWith((async () => {
-//       try {
-//         const preloadResp = await event.preloadResponse;
-
-//         if (preloadResp) {
-//           return preloadResp;
-//         }
-
-//         const networkResp = await fetch(event.request);
-//         return networkResp;
-//       } catch (error) {
-
-//         const cache = await caches.open(CACHE);
-//         const cachedResp = await cache.match(offlineFallbackPage);
-//         return cachedResp;
-//       }
-//     })());
-//   }
-// });
+self.addEventListener('install', function(event) {
+// Perform install steps
+// Perform install steps
 
 
-/*
-Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-*/
-
-// Incrementing OFFLINE_VERSION will kick off the install event and force
-// previously cached resources to be updated from the network.
-// This variable is intentionally declared and unused.
-// Add a comment for your linter if you want:
-// eslint-disable-next-line no-unused-vars
-const OFFLINE_VERSION = 1;
-const CACHE_NAME = "offline";
-// Customize this with a different URL if needed.
-const OFFLINE_URL = "offline.html";
-const OFFLINE_CSS1 = "user_css/index.css";
-const OFFLINE_CSS2 = "user_css/main.css";
-const OFFLINE_CSS3 = "user_css/themes.css";
-const OFFLINE_JS = "user_scripts/theme.js";
-const OFFLINE_404 = "404.html";
-const OFFLINE_DEV = "dev.html";
-const OFFLINE_DEVJS = "user_scripts/dev.js";
-
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    (async () => {
-      const cache = await caches.open(CACHE_NAME);
-      // Setting {cache: 'reload'} in the new request ensures that the
-      // response isn't fulfilled from the HTTP cache; i.e., it will be
-      // from the network.
-      await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_CSS1, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_CSS2, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_CSS3, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_JS, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_404, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_DEV, { cache: "reload" }));
-      await cache.add(new Request(OFFLINE_DEVJS, { cache: "reload" }));
-    })()
-  );
-  // Force the waiting service worker to become the active service worker.
-  self.skipWaiting();
-});
-
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      // Enable navigation preload if it's supported.
-      // See https://developers.google.com/web/updates/2017/02/navigation-preload
-      if ("navigationPreload" in self.registration) {
-        await self.registration.navigationPreload.enable();
-      }
-    })()
-  );
-
-  // Tell the active service worker to take control of the page immediately.
-  self.clients.claim();
-});
-
-self.addEventListener("fetch", (event) => {
-  // Only call event.respondWith() if this is a navigation request
-  // for an HTML page.
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      (async () => {
-        try {
-          // First, try to use the navigation preload response if it's
-          // supported.
-          const preloadResponse = await event.preloadResponse;
-          if (preloadResponse) {
-            return preloadResponse;
-          }
-
-          // Always try the network first.
-          const networkResponse = await fetch(event.request);
-          return networkResponse;
-        } catch (error) {
-          // catch is only triggered if an exception is thrown, which is
-          // likely due to a network error.
-          // If fetch() returns a valid HTTP response with a response code in
-          // the 4xx or 5xx range, the catch() will NOT be called.
-          console.log("Fetch failed; returning offline page instead.", error);
-
-          const cache = await caches.open(CACHE_NAME);
-          const cachedResponse = await cache.match(OFFLINE_URL);
-          return cachedResponse;
-        }
-      })()
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(function(cache) {
+            console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+        })
     );
-  }
+});
 
-  // If our if() condition is false, then this fetch handler won't
-  // intercept the request. If there are any other fetch handlers
-  // registered, they will get a chance to call event.respondWith().
-  // If no fetch handlers call event.respondWith(), the request
-  // will be handled by the browser as if there were no service
-  // worker involvement.
+self.addEventListener("fetch", function (event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(function (response) {
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
+    );
+});
+
+
+self.addEventListener("activate", event => {
+  // delete any unexpected caches
+  event.waitUntil(
+    caches
+      .keys()
+      .then(keys => keys.filter(key => key !== CACHE_NAME))
+      .then(keys =>
+        Promise.all(
+          keys.map(key => {
+            console.log(`Deleting cache ${key}`);
+            return caches.delete(key);
+          })
+        )
+      )
+  );
 });
