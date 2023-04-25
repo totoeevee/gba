@@ -69,7 +69,7 @@ function embedCopy() {
     let gameTitle = JSON.parse(savedGameTxt);
     var copyData = document.getElementById("inputText");
 
-    var embedCode = "<iframe src='https://math-study.github.io/gba/launchpad.html?gameID='" + gameID + "&gametitle=" + gameTitle + "&fav=true";
+    var embedCode = "<iframe src='https://math-study.github.io/gba/launchpad.html?gameID=" + gameID + "&gametitle=" + gameTitle + "&fav=true'";
 
     copyData.value = embedCode + ' width="100%" height="500" frameBorder="0" style="border: 0;"></iframe><br>Brought to you by <a href="https://math-study.github.io/gba" target="_blank">math-study.github.io/gba</a>'
     copyData.select();
