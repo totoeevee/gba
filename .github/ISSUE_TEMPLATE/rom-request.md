@@ -7,10 +7,14 @@ assignees: ''
 
 ---
 
-**Is this a rom hack?**
+## Is this a rom hack?
 
-**Do you have a link to the ROM?**
 
-**Does this ROM required patching?**
+## Do you have a link to the ROM?
+**Please note that having a link raises the chance of it being added**
 
-**Anything Extra**
+
+## Does this ROM required patching?
+
+
+## Anything Extra
