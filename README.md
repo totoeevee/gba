@@ -8,7 +8,7 @@ Pretty much all games, including GBA soon, are hosted on an external server. ~Th
 
 There is now a second repo with our Roms hosted on it! See [Here!](https://github.com/math-study/gba-host)
 
-Any of our games that we host on our server are allowed to be referenced! Please do not abuse this or risk loosing access. Please [reach out](https://discord.gg/nZrabh4cgH) if you would like a local copy of the roms hosted. We will review each request individually.
+Any of our games that we host on our server are allowed to be referenced! Please do not abuse this or risk loosing access. Please [reach out](https://discord.gg/math-study-934807331668099142) if you would like a local copy of the roms hosted. We will review each request individually.
 
 
 
