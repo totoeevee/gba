@@ -102,3 +102,7 @@ html {
 a {
     color: var(--primary-color);
 }
+
+.gameplayer-2 {
+    height: 75vh;
+}
